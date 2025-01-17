@@ -98,6 +98,20 @@
                                     <plugin-options>
                                         <jboss-fork-embedded>${galleon.fork.embedded}</jboss-fork-embedded>
                                     </plugin-options>
+                                    <channels>
+                                        <channel>
+                                            <manifest>
+                                                <groupId>org.jboss.eap.channels</groupId>
+                                                <artifactId>eap-8.0</artifactId>
+                                            </manifest>
+                                        </channel>
+                                        <channel>
+                                            <manifest>
+                                                <groupId>org.jboss.eap.channels</groupId>
+                                                <artifactId>eap-xp-5.0</artifactId>
+                                            </manifest>
+                                        </channel>
+                                    </channels> 
                                     <feature-packs>
                                         <feature-pack>
                                             <groupId>${testsuite.galleon.pack.groupId}</groupId>

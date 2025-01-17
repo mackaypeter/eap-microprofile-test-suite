@@ -1,7 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
       <groupId>org.jboss.eap.qe</groupId>
       <artifactId>microprofile-test-suite</artifactId>
@@ -120,6 +119,20 @@
                                     <plugin-options>
                                         <jboss-fork-embedded>${galleon.fork.embedded}</jboss-fork-embedded>
                                     </plugin-options>
+                                    <channels>
+                                        <channel>
+                                            <manifest>
+                                                <groupId>org.jboss.eap.channels</groupId>
+                                                <artifactId>eap-8.0</artifactId>
+                                            </manifest>
+                                        </channel>
+                                        <channel>
+                                            <manifest>
+                                                <groupId>org.jboss.eap.channels</groupId>
+                                                <artifactId>eap-xp-5.0</artifactId>
+                                            </manifest>
+                                        </channel>
+                                    </channels> 
                                     <feature-packs>
                                         <feature-pack>
                                             <groupId>${testsuite.galleon.pack.groupId}</groupId>
