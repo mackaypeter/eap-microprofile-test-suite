@@ -249,7 +249,7 @@ public class NotReadyHealthCheckTest {
                         .statusCode(503)
                         .body("status", is("DOWN"),
                                 "checks.name", containsInAnyOrder(DelayedReadinessHealthCheck.NAME, "deployments-status",
-                                        "boot-errors", "server-state"));
+                                        "boot-errors", "server-state", "suspend-state"));
             } finally {
                 controller.stop(ManualTests.ARQUILLIAN_CONTAINER);
             }
@@ -302,7 +302,7 @@ public class NotReadyHealthCheckTest {
                         .body("status", is("UP"),
                                 "checks.name", containsInAnyOrder(
                                         "ready-deployment." + DelayedLivenessHealthCheck.class.getSimpleName() + ".war",
-                                        "deployments-status", "boot-errors", "server-state"));
+                                        "deployments-status", "boot-errors", "server-state", "suspend-state"));
             } finally {
                 controller.stop(ManualTests.ARQUILLIAN_CONTAINER);
             }
